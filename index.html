@@ -7,14 +7,16 @@
   <meta name="description" content="Biodys BV is a small engineering company in Groningen, the Netherlands, working on bioprocess engineering, industrial automation, instrumentation and technical software." />
   <style>
     :root{
-      --bg:#0b0d12;
-      --card:#101522;
-      --text:#e9edf5;
-      --muted:#b9c2d3;
-      --line:rgba(255,255,255,.12);
-      --accent:#7dd3fc;
-      --accent2:#a7f3d0;
-      --shadow:0 10px 30px rgba(0,0,0,.35);
+      --bg:#ffffff;
+      --card:#ffffff;
+      --soft:#f6f7f9;
+      --soft-accent:#fff5ed;
+      --text:#171717;
+      --muted:#626875;
+      --line:#e7e9ed;
+      --accent:#ff6500;
+      --accent-dark:#c94f00;
+      --shadow:0 10px 30px rgba(17,24,39,.06);
       --radius:16px;
       --max:980px;
       --pad:22px;
@@ -26,53 +28,57 @@
       margin:0;
       font-family:var(--sans);
       background:
-        radial-gradient(1200px 600px at 70% -10%,rgba(125,211,252,.18),transparent 60%),
-        radial-gradient(900px 500px at 20% 10%,rgba(167,243,208,.10),transparent 55%),
-        var(--bg);
+        radial-gradient(1000px 420px at 100% -10%,rgba(255,101,0,.08),transparent 60%),
+        linear-gradient(180deg,#fff 0%,#fcfcfd 100%);
       color:var(--text);
       line-height:1.6;
     }
-    a{color:var(--accent);text-decoration:none}
+    a{color:var(--accent-dark);text-decoration:none}
     a:hover{text-decoration:underline}
     .wrap{max-width:var(--max);margin:0 auto;padding:28px 18px 60px}
     header{
-      display:flex;align-items:center;justify-content:space-between;gap:14px;
-      padding:14px 0 20px;
+      display:flex;align-items:center;justify-content:space-between;gap:18px;
+      padding:10px 0 22px;
+      position:sticky;top:0;z-index:10;
+      background:rgba(255,255,255,.92);
+      backdrop-filter:blur(10px);
     }
-    .brand{display:flex;align-items:center;gap:12px}
-    .logo{
-      width:36px;height:36px;border-radius:10px;
-      background:linear-gradient(135deg,rgba(125,211,252,.95),rgba(167,243,208,.85));
-      display:grid;place-items:center;color:#06101a;font-weight:800;
-    }
+    .brand{display:flex;align-items:center;gap:16px;min-width:0}
+    .brand-logo{width:170px;height:auto;display:block;flex:0 0 auto}
+    .brand-copy{min-width:0}
     .brand strong{display:block;font-size:15px}
     .brand span{display:block;font-size:12px;color:var(--muted)}
     nav{display:flex;gap:10px;flex-wrap:wrap;justify-content:flex-end}
-    nav a{font-size:13px;color:var(--muted);padding:7px 9px;border-radius:999px}
-    nav a:hover{color:var(--text);background:rgba(16,21,34,.45);text-decoration:none}
+    nav a{font-size:13px;color:var(--muted);padding:7px 10px;border-radius:999px}
+    nav a:hover{color:var(--text);background:var(--soft);text-decoration:none}
     .hero,
     .card{
       border:1px solid var(--line);
-      background:rgba(16,21,34,.48);
+      background:var(--card);
       box-shadow:var(--shadow);
       border-radius:var(--radius);
     }
-    .hero{padding:28px;margin-top:8px}
+    .hero{
+      padding:30px;
+      margin-top:8px;
+      border-top:4px solid var(--accent);
+    }
     .hero h1{margin:0 0 12px;font-size:clamp(30px,5vw,46px);line-height:1.12;letter-spacing:-.7px}
     .hero p{margin:0;color:var(--muted);max-width:72ch}
     .tags{display:flex;gap:10px;flex-wrap:wrap;margin-top:18px}
     .tag{
       font-size:12px;padding:7px 10px;border-radius:999px;
-      border:1px solid var(--line);background:rgba(11,13,18,.25);color:var(--muted)
+      border:1px solid var(--line);background:var(--soft);color:var(--muted)
     }
     .cta{display:flex;gap:10px;flex-wrap:wrap;margin-top:18px}
     .btn{
       display:inline-flex;align-items:center;justify-content:center;
       padding:10px 13px;border-radius:999px;border:1px solid var(--line);
-      color:var(--text);font-size:13px;background:rgba(11,13,18,.25)
+      color:var(--text);font-size:13px;background:#fff;font-weight:600
     }
-    .btn:hover{background:rgba(16,21,34,.65);text-decoration:none}
-    .btn.primary{border-color:rgba(125,211,252,.35);background:rgba(125,211,252,.10)}
+    .btn:hover{background:var(--soft);text-decoration:none}
+    .btn.primary{border-color:var(--accent);background:var(--accent);color:#fff}
+    .btn.primary:hover{background:#e95d00}
     .grid{display:grid;grid-template-columns:repeat(12,1fr);gap:14px;margin-top:14px}
     .card{grid-column:span 4;padding:var(--pad)}
     .card.wide{grid-column:span 12}
@@ -82,7 +88,10 @@
     .card li{margin:6px 0}
     .small{font-size:13px}
     .split{display:grid;grid-template-columns:1.2fr .8fr;gap:18px;align-items:start}
-    .contactline{margin-top:8px;color:var(--muted)}
+    .contactline{
+      margin-top:14px;color:var(--muted);padding:14px 16px;
+      border-radius:12px;background:var(--soft-accent);border:1px solid #fed7aa
+    }
     footer{
       margin-top:24px;padding-top:16px;border-top:1px solid var(--line);
       display:flex;justify-content:space-between;gap:12px;flex-wrap:wrap;
@@ -91,8 +100,14 @@
     @media(max-width:860px){
       .card{grid-column:span 12}
       .split{grid-template-columns:1fr}
-      header{align-items:flex-start;flex-direction:column}
+      header{align-items:flex-start;flex-direction:column;position:static;background:transparent;backdrop-filter:none}
       nav{justify-content:flex-start}
+      .brand-logo{width:150px}
+    }
+    @media(max-width:560px){
+      .brand{align-items:flex-start;flex-direction:column;gap:8px}
+      .hero{padding:22px}
+      .card{padding:20px}
     }
   </style>
 </head>
@@ -100,8 +115,8 @@
   <div class="wrap">
     <header>
       <div class="brand" aria-label="Biodys BV">
-        <div class="logo" aria-hidden="true">B</div>
-        <div>
+        <img class="brand-logo" src="logo.png" alt="Biodys" />
+        <div class="brand-copy">
           <strong>Biodys BV</strong>
           <span>Groningen, The Netherlands</span>
         </div>
@@ -121,9 +136,9 @@
         from analysis and equipment selection to prototyping, implementation and troubleshooting.
       </p>
       <div class="tags" aria-label="Areas of expertise">
-        <span class="tag">Fermentation & bioprocessing</span>
-        <span class="tag">Instrumentation & PLC control</span>
-        <span class="tag">Process data & logging</span>
+        <span class="tag">Fermentation &amp; bioprocessing</span>
+        <span class="tag">Instrumentation &amp; PLC control</span>
+        <span class="tag">Process data &amp; logging</span>
         <span class="tag">Embedded and edge integration</span>
       </div>
       <div class="cta">
@@ -134,7 +149,7 @@
 
     <section class="grid" id="work" aria-label="What we do">
       <div class="card">
-        <h2>Bioprocess & process engineering</h2>
+        <h2>Bioprocess &amp; process engineering</h2>
         <p>
           Practical engineering around fermentation, process equipment and utilities,
           with attention to measurability, reproducibility and maintainability.
@@ -147,7 +162,7 @@
       </div>
 
       <div class="card">
-        <h2>Industrial automation & instrumentation</h2>
+        <h2>Industrial automation &amp; instrumentation</h2>
         <p>
           Control and measurement solutions for process installations, including upgrades
           to existing systems where replacement of the complete installation is unnecessary.
@@ -160,7 +175,7 @@
       </div>
 
       <div class="card">
-        <h2>Technical software & integration</h2>
+        <h2>Technical software &amp; integration</h2>
         <p>
           Small, maintainable software tools and interfaces for industrial environments,
           especially where machines, process data and business systems need to connect.
