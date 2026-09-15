@@ -1,214 +1,101 @@
 <!doctype html>
-<html lang="nl">
+<html lang="en">
 <head>
   <meta charset="utf-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1" />
-  <title>Biodys BV — Procestechnologie • Biotech • Automatisering</title>
-  <meta name="description" content="Biodys BV (eenmans-BV) — procestechnologie, procurement-advies, consulting en softwareontwikkeling voor technische automatisering, met focus op biotech." />
-
+  <title>Biodys BV — Bioprocess engineering • Industrial automation • Technical software</title>
+  <meta name="description" content="Biodys BV is a small engineering company in Groningen, the Netherlands, working on bioprocess engineering, industrial automation, instrumentation and technical software." />
   <style>
     :root{
-      --bg: #0b0d12;
-      --card: #101522;
-      --text: #e9edf5;
-      --muted: #b9c2d3;
-      --line: rgba(255,255,255,.12);
-      --accent: #7dd3fc; /* light cyan */
-      --accent2: #a7f3d0; /* mint */
-      --shadow: 0 10px 30px rgba(0,0,0,.35);
-      --radius: 16px;
-      --max: 980px;
-      --pad: 22px;
-      --mono: ui-monospace, SFMono-Regular, Menlo, Monaco, Consolas, "Liberation Mono", "Courier New", monospace;
-      --sans: ui-sans-serif, system-ui, -apple-system, Segoe UI, Roboto, Helvetica, Arial, "Apple Color Emoji","Segoe UI Emoji";
+      --bg:#0b0d12;
+      --card:#101522;
+      --text:#e9edf5;
+      --muted:#b9c2d3;
+      --line:rgba(255,255,255,.12);
+      --accent:#7dd3fc;
+      --accent2:#a7f3d0;
+      --shadow:0 10px 30px rgba(0,0,0,.35);
+      --radius:16px;
+      --max:980px;
+      --pad:22px;
+      --sans:ui-sans-serif,system-ui,-apple-system,Segoe UI,Roboto,Helvetica,Arial,sans-serif;
     }
-    *{ box-sizing: border-box; }
-    html,body{ height:100%; }
+    *{box-sizing:border-box}
+    html{scroll-behavior:smooth}
     body{
       margin:0;
-      font-family: var(--sans);
+      font-family:var(--sans);
       background:
-        radial-gradient(1200px 600px at 70% -10%, rgba(125,211,252,.18), transparent 60%),
-        radial-gradient(900px 500px at 20% 10%, rgba(167,243,208,.10), transparent 55%),
+        radial-gradient(1200px 600px at 70% -10%,rgba(125,211,252,.18),transparent 60%),
+        radial-gradient(900px 500px at 20% 10%,rgba(167,243,208,.10),transparent 55%),
         var(--bg);
-      color: var(--text);
-      line-height: 1.55;
+      color:var(--text);
+      line-height:1.6;
     }
-    a{ color: var(--accent); text-decoration: none; }
-    a:hover{ text-decoration: underline; }
-
-    .wrap{ max-width: var(--max); margin: 0 auto; padding: 28px 18px 60px; }
+    a{color:var(--accent);text-decoration:none}
+    a:hover{text-decoration:underline}
+    .wrap{max-width:var(--max);margin:0 auto;padding:28px 18px 60px}
     header{
-      display:flex; align-items:center; justify-content:space-between;
-      gap:14px; padding: 14px 0 20px; position: sticky; top: 0;
-      background: linear-gradient(to bottom, rgba(11,13,18,.95), rgba(11,13,18,.70), rgba(11,13,18,0));
-      backdrop-filter: blur(10px);
-      z-index: 10;
+      display:flex;align-items:center;justify-content:space-between;gap:14px;
+      padding:14px 0 20px;
     }
-    .brand{
-      display:flex; align-items:center; gap:12px;
-      padding: 8px 10px;
-      border: 1px solid var(--line);
-      border-radius: 999px;
-      background: rgba(16,21,34,.55);
-      box-shadow: var(--shadow);
-    }
+    .brand{display:flex;align-items:center;gap:12px}
     .logo{
-      width:34px; height:34px; border-radius: 10px;
-      background:
-        linear-gradient(135deg, rgba(125,211,252,.95), rgba(167,243,208,.85));
-      display:grid; place-items:center;
-      color:#06101a;
-      font-weight: 800;
-      letter-spacing: .5px;
+      width:36px;height:36px;border-radius:10px;
+      background:linear-gradient(135deg,rgba(125,211,252,.95),rgba(167,243,208,.85));
+      display:grid;place-items:center;color:#06101a;font-weight:800;
     }
-    .brand strong{ font-size: 14px; letter-spacing:.2px; }
-    .brand span{ display:block; font-size: 12px; color: var(--muted); }
-
-    nav{
-      display:flex; gap: 10px; flex-wrap: wrap; justify-content:flex-end;
-    }
-    nav a{
-      font-size: 13px; color: var(--muted);
-      padding: 8px 10px;
-      border-radius: 999px;
-      border: 1px solid transparent;
-    }
-    nav a:hover{
-      color: var(--text);
-      border-color: var(--line);
-      background: rgba(16,21,34,.35);
-      text-decoration:none;
-    }
-
-    .hero{
-      margin-top: 10px;
-      padding: 26px;
-      border-radius: var(--radius);
-      background: rgba(16,21,34,.55);
-      border: 1px solid var(--line);
-      box-shadow: var(--shadow);
-    }
-    .hero h1{
-      margin: 0 0 10px;
-      font-size: clamp(26px, 4vw, 40px);
-      line-height: 1.15;
-      letter-spacing: -0.4px;
-    }
-    .hero p{
-      margin: 0 0 18px;
-      color: var(--muted);
-      max-width: 70ch;
-    }
-    .pillrow{ display:flex; gap:10px; flex-wrap:wrap; margin: 14px 0 0; }
-    .pill{
-      font-size: 12px;
-      padding: 7px 10px;
-      border-radius: 999px;
-      border: 1px solid var(--line);
-      background: rgba(11,13,18,.25);
-      color: var(--muted);
-      display:inline-flex;
-      gap: 8px;
-      align-items:center;
-    }
-    .dot{
-      width: 8px; height: 8px; border-radius: 99px;
-      background: var(--accent);
-      box-shadow: 0 0 0 4px rgba(125,211,252,.10);
-    }
-
-    .grid{
-      display:grid;
-      gap: 14px;
-      grid-template-columns: repeat(12, 1fr);
-      margin-top: 14px;
-    }
+    .brand strong{display:block;font-size:15px}
+    .brand span{display:block;font-size:12px;color:var(--muted)}
+    nav{display:flex;gap:10px;flex-wrap:wrap;justify-content:flex-end}
+    nav a{font-size:13px;color:var(--muted);padding:7px 9px;border-radius:999px}
+    nav a:hover{color:var(--text);background:rgba(16,21,34,.45);text-decoration:none}
+    .hero,
     .card{
-      grid-column: span 6;
-      padding: var(--pad);
-      border-radius: var(--radius);
-      background: rgba(16,21,34,.45);
-      border: 1px solid var(--line);
-      box-shadow: var(--shadow);
+      border:1px solid var(--line);
+      background:rgba(16,21,34,.48);
+      box-shadow:var(--shadow);
+      border-radius:var(--radius);
     }
-    .card h2{
-      margin: 0 0 10px;
-      font-size: 16px;
-      letter-spacing: .2px;
+    .hero{padding:28px;margin-top:8px}
+    .hero h1{margin:0 0 12px;font-size:clamp(30px,5vw,46px);line-height:1.12;letter-spacing:-.7px}
+    .hero p{margin:0;color:var(--muted);max-width:72ch}
+    .tags{display:flex;gap:10px;flex-wrap:wrap;margin-top:18px}
+    .tag{
+      font-size:12px;padding:7px 10px;border-radius:999px;
+      border:1px solid var(--line);background:rgba(11,13,18,.25);color:var(--muted)
     }
-    .card p{ margin: 0; color: var(--muted); }
-    .card ul{
-      margin: 10px 0 0;
-      padding-left: 18px;
-      color: var(--muted);
-    }
-    .card li{ margin: 6px 0; }
-    .small{ font-size: 13px; }
-
-    .wide{ grid-column: span 12; }
-
-    .kpi{
-      display:grid;
-      grid-template-columns: repeat(3, minmax(0,1fr));
-      gap: 10px;
-      margin-top: 12px;
-    }
-    .kpi .box{
-      padding: 12px 12px;
-      border-radius: 14px;
-      border: 1px solid var(--line);
-      background: rgba(11,13,18,.25);
-    }
-    .kpi strong{
-      display:block;
-      font-family: var(--mono);
-      font-size: 12px;
-      color: var(--text);
-      margin-bottom: 4px;
-    }
-    .kpi span{
-      font-size: 12px;
-      color: var(--muted);
-    }
-
-    .cta{
-      display:flex; gap: 10px; flex-wrap:wrap; margin-top: 16px;
-    }
+    .cta{display:flex;gap:10px;flex-wrap:wrap;margin-top:18px}
     .btn{
-      display:inline-flex; align-items:center; justify-content:center;
-      gap: 8px;
-      padding: 10px 12px;
-      border-radius: 999px;
-      border: 1px solid var(--line);
-      background: rgba(11,13,18,.25);
-      color: var(--text);
-      font-size: 13px;
-      text-decoration:none;
+      display:inline-flex;align-items:center;justify-content:center;
+      padding:10px 13px;border-radius:999px;border:1px solid var(--line);
+      color:var(--text);font-size:13px;background:rgba(11,13,18,.25)
     }
-    .btn:hover{ background: rgba(16,21,34,.55); text-decoration:none; }
-    .btn.primary{
-      border-color: rgba(125,211,252,.35);
-      background: rgba(125,211,252,.10);
-    }
-
+    .btn:hover{background:rgba(16,21,34,.65);text-decoration:none}
+    .btn.primary{border-color:rgba(125,211,252,.35);background:rgba(125,211,252,.10)}
+    .grid{display:grid;grid-template-columns:repeat(12,1fr);gap:14px;margin-top:14px}
+    .card{grid-column:span 4;padding:var(--pad)}
+    .card.wide{grid-column:span 12}
+    .card h2{margin:0 0 10px;font-size:17px}
+    .card p{margin:0;color:var(--muted)}
+    .card ul{margin:12px 0 0;padding-left:18px;color:var(--muted)}
+    .card li{margin:6px 0}
+    .small{font-size:13px}
+    .split{display:grid;grid-template-columns:1.2fr .8fr;gap:18px;align-items:start}
+    .contactline{margin-top:8px;color:var(--muted)}
     footer{
-      margin-top: 22px;
-      padding-top: 16px;
-      border-top: 1px solid var(--line);
-      color: var(--muted);
-      font-size: 12px;
-      display:flex; flex-wrap:wrap; gap: 10px; align-items:center; justify-content:space-between;
+      margin-top:24px;padding-top:16px;border-top:1px solid var(--line);
+      display:flex;justify-content:space-between;gap:12px;flex-wrap:wrap;
+      color:var(--muted);font-size:12px
     }
-
-    @media (max-width: 860px){
-      .card{ grid-column: span 12; }
-      .kpi{ grid-template-columns: 1fr; }
-      header{ position: static; background: transparent; backdrop-filter: none; }
+    @media(max-width:860px){
+      .card{grid-column:span 12}
+      .split{grid-template-columns:1fr}
+      header{align-items:flex-start;flex-direction:column}
+      nav{justify-content:flex-start}
     }
   </style>
 </head>
-
 <body>
   <div class="wrap">
     <header>
@@ -216,164 +103,124 @@
         <div class="logo" aria-hidden="true">B</div>
         <div>
           <strong>Biodys BV</strong>
-          <span>Procestechnologie • Biotech • Automatisering</span>
+          <span>Groningen, The Netherlands</span>
         </div>
       </div>
-
-      <nav aria-label="Navigatie">
-        <a href="#diensten">Diensten</a>
-        <a href="#aanpak">Aanpak</a>
-        <a href="#projecten">Voorbeelden</a>
+      <nav aria-label="Navigation">
+        <a href="#work">What we do</a>
+        <a href="#projects">Typical projects</a>
         <a href="#contact">Contact</a>
       </nav>
     </header>
 
-    <section class="hero" id="top">
-      <h1>Engineering en software voor bioprocessen die <span style="color:var(--accent2)">meetbaar</span> en <span style="color:var(--accent)">reproduceerbaar</span> zijn.</h1>
+    <section class="hero">
+      <h1>Bioprocess engineering, industrial automation and technical software.</h1>
       <p>
-        Biodys BV is een eenmans-BV gericht op procestechnologie, procurement-advies, consulting en
-        softwareontwikkeling voor technische automatisering — met focus op biotech en fermentatie.
-        Praktisch, data-gedreven en met oog voor QA/compliance.
+        Biodys BV is a small engineering company working at the intersection of biotechnology,
+        process engineering, instrumentation and software. We support focused technical projects,
+        from analysis and equipment selection to prototyping, implementation and troubleshooting.
       </p>
-
-      <div class="pillrow" aria-label="Kernpunten">
-        <span class="pill"><span class="dot"></span> Bioprocessen & fermentatie</span>
-        <span class="pill"><span class="dot" style="background:var(--accent2); box-shadow: 0 0 0 4px rgba(167,243,208,.10)"></span> PLC/SCADA & logging</span>
-        <span class="pill"><span class="dot"></span> Sensoren: pH/DO/Temp/Level</span>
-        <span class="pill"><span class="dot" style="background:var(--accent2); box-shadow: 0 0 0 4px rgba(167,243,208,.10)"></span> Traceability & QA</span>
+      <div class="tags" aria-label="Areas of expertise">
+        <span class="tag">Fermentation & bioprocessing</span>
+        <span class="tag">Instrumentation & PLC control</span>
+        <span class="tag">Process data & logging</span>
+        <span class="tag">Embedded and edge integration</span>
       </div>
-
       <div class="cta">
-        <a class="btn primary" href="#contact" title="Neem contact op">Contact opnemen</a>
-        <a class="btn" href="#diensten" title="Bekijk diensten">Diensten bekijken</a>
+        <a class="btn primary" href="mailto:inq@biodys.com?subject=Inquiry%20for%20Biodys%20BV">Contact Biodys</a>
+        <a class="btn" href="#work">View expertise</a>
       </div>
     </section>
 
-    <section class="grid" id="diensten" aria-label="Diensten">
+    <section class="grid" id="work" aria-label="What we do">
       <div class="card">
-        <h2>Procestechnologie (biotech)</h2>
+        <h2>Bioprocess & process engineering</h2>
         <p>
-          Ontwerp, optimalisatie en troubleshooting van bioprocessen en installaties.
-          Van lab-opzet tot (pilot)-schaal, met aandacht voor meetbaarheid en reproduceerbaarheid.
+          Practical engineering around fermentation, process equipment and utilities,
+          with attention to measurability, reproducibility and maintainability.
         </p>
         <ul class="small">
-          <li>Fermentatie-setup, CIP/SIP-denkwerk, instrumentatiekeuze</li>
-          <li>Receptuur- en procesvariabelen: temperatuur, pH, DO, feed, agitatie</li>
-          <li>Data-interpretatie: trends, yield-inschatting, eenvoudige modellen</li>
+          <li>Fermenters and pilot-scale equipment</li>
+          <li>Temperature, pH, DO and feed control</li>
+          <li>CIP/SIP, process heating and equipment specification</li>
         </ul>
       </div>
 
       <div class="card">
-        <h2>Procurement-advies</h2>
+        <h2>Industrial automation & instrumentation</h2>
         <p>
-          Onafhankelijke selectie en specificatie van hardware en leveranciers, afgestemd op
-          technische eisen, onderhoudbaarheid en QA-vereisten.
+          Control and measurement solutions for process installations, including upgrades
+          to existing systems where replacement of the complete installation is unnecessary.
         </p>
         <ul class="small">
-          <li>Requirements: URS/FRS, meetketen, kalibratie & serviceability</li>
-          <li>Vergelijking van sensoren, kleppen, pompen, PLC/I/O en gateways</li>
-          <li>Pragmatische risico-inventarisatie (downtime, leverbaarheid, compatibiliteit)</li>
+          <li>PLC programming and I/O integration</li>
+          <li>pH, DO, temperature, pressure and other instrumentation</li>
+          <li>Modbus, gateways and process logging</li>
         </ul>
       </div>
 
       <div class="card">
-        <h2>Consulting</h2>
+        <h2>Technical software & integration</h2>
         <p>
-          Korte, gerichte trajecten voor analyse, planvorming en implementatiebegeleiding.
-          Communicatie op zowel engineering- als managementniveau.
+          Small, maintainable software tools and interfaces for industrial environments,
+          especially where machines, process data and business systems need to connect.
         </p>
         <ul class="small">
-          <li>Architectuurkeuzes (OT/IT), netwerk & integraties</li>
-          <li>QA-proof logging, audit-trail thinking, SOP-ondersteuning</li>
-          <li>Review van bestaande systemen en “next steps” roadmap</li>
+          <li>Batch logging and reporting</li>
+          <li>Embedded and Linux-based gateways</li>
+          <li>ERP and machine-data integration</li>
         </ul>
       </div>
 
-      <div class="card">
-        <h2>Softwareontwikkeling (technische automatisering)</h2>
-        <p>
-          Development van tooling en integraties rondom procesautomatisering:
-          logging, dashboards, rapportage, integratie met ERP/LIMS en seriële/fieldbus communicatie.
-        </p>
-        <ul class="small">
-          <li>PLC-integratie (o.a. Modbus), gateways, edge-logging</li>
-          <li>Rapportage & data-export (PDF/CSV), trendplots, batch-overzichten</li>
-          <li>Custom tools in o.a. C/C#/Python (afhankelijk van context)</li>
-        </ul>
-      </div>
-
-      <div class="card wide" id="aanpak">
-        <h2>Aanpak</h2>
-        <p>
-          Ik werk het liefst in korte iteraties: eerst scherpstellen wat “goed” betekent (meetbaar),
-          dan het minimale realiseren dat direct waarde levert, en daarna uitbreiden.
-        </p>
-
-        <div class="kpi" role="list" aria-label="Werkwijze in drie stappen">
-          <div class="box" role="listitem">
-            <strong>1) Intake & scope</strong>
-            <span>Doel, randvoorwaarden, risico’s, quick wins.</span>
+      <div class="card wide" id="projects">
+        <div class="split">
+          <div>
+            <h2>Typical projects</h2>
+            <p>
+              Assignments are usually compact and technically focused. Examples include:
+            </p>
+            <ul class="small">
+              <li>Fermenter instrumentation and control, including pH, DO and temperature</li>
+              <li>Steam, SIP and process-heating questions</li>
+              <li>PLC batch logging, data export and technical reporting</li>
+              <li>Industrial gateways between machines and ERP systems</li>
+              <li>Selection and specification of pumps, valves, sensors and heat exchangers</li>
+            </ul>
           </div>
-          <div class="box" role="listitem">
-            <strong>2) Prototype / proof</strong>
-            <span>Meetplan, logging, kleine pilot of test run.</span>
-          </div>
-          <div class="box" role="listitem">
-            <strong>3) Implementatie</strong>
-            <span>Robuust maken, documenteren, overdracht.</span>
+          <div>
+            <h2>How Biodys works</h2>
+            <p>
+              Direct contact, short lines and a pragmatic approach. Depending on the assignment,
+              work may consist of analysis, design, prototyping, supplier evaluation,
+              implementation support or troubleshooting.
+            </p>
           </div>
         </div>
-      </div>
-
-      <div class="card wide" id="projecten">
-        <h2>Voorbeelden van onderwerpen</h2>
-        <p class="small">
-          Een greep uit typische vraagstukken (afhankelijk van beschikbaarheid en NDA):
-        </p>
-        <ul class="small">
-          <li>Realtime procesmonitoring: pH/DO/temperatuur + eenvoudige model-benadering voor biomassa/yield</li>
-          <li>Data-logging en rapportage voor QA: batchrapporten, trends en incidenten</li>
-          <li>OT-integratie: Modbus-devices, seriële koppelingen, gateways en netwerkhygiëne</li>
-          <li>Hardwareselectie: sensoren, kleppen, pompen, I/O, controllers en servicecontracten</li>
-        </ul>
-        <p class="small" style="margin-top:10px;">
-          Liever concreet? Stuur 3–5 bullets met je situatie en ik geef een korte terugkoppeling
-          met mogelijke aanpak en inschatting van scope.
-        </p>
       </div>
 
       <div class="card wide" id="contact">
         <h2>Contact</h2>
         <p>
+          Have a technical question, a small engineering project or a system that needs to be
+          understood, improved or connected? Feel free to get in touch.
+        </p>
+        <p class="contactline">
           <strong>Biodys BV</strong><br />
-          Groningen, Nederland
+          Groningen, The Netherlands<br />
+          E-mail: <a href="mailto:inq@biodys.com">inq@biodys.com</a>
         </p>
-        <p class="small" style="margin-top:10px;">
-          E-mail: <a href="mailto:info@biodys.example">info@biodys.example</a><br />
-          Telefoon: <a href="tel:+31000000000">+31 0 0000 0000</a><br />
-          KvK: <span style="font-family:var(--mono)">[vul in]</span> • BTW: <span style="font-family:var(--mono)">[vul in]</span>
-        </p>
-
         <div class="cta">
-          <a class="btn primary" href="mailto:info@biodys.example?subject=Vraag%20Biodys%20BV">E-mail sturen</a>
-          <a class="btn" href="#top">Terug naar boven</a>
+          <a class="btn primary" href="mailto:inq@biodys.com?subject=Inquiry%20for%20Biodys%20BV">Send an inquiry</a>
         </div>
-
-        <p class="small" style="margin-top:12px; color: var(--muted);">
-          Tip: vervang de placeholders (e-mail/telefoon/KvK/BTW) en overweeg een aparte
-          domeinnaam + mailadres. Deze pagina werkt ook prima als “under construction”.
-        </p>
       </div>
     </section>
 
     <footer>
       <div>© <span id="year"></span> Biodys BV</div>
-      <div class="small">Procestechnologie • Procurement-advies • Consulting • Softwareontwikkeling</div>
+      <div>Bioprocess engineering • Industrial automation • Technical software</div>
     </footer>
   </div>
-
   <script>
-    // Alleen voor het jaartal; geen tracking, geen cookies.
     document.getElementById("year").textContent = new Date().getFullYear();
   </script>
 </body>
