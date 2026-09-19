@@ -69,30 +69,41 @@
       padding:30px;
       margin-top:8px;
       border-top:4px solid var(--accent);
+      background:
+        linear-gradient(rgba(255,255,255,.91),rgba(255,255,255,.91)),
+        url("../assets/fermenter-background.jpg") center 46%/cover no-repeat;
     }
     .hero h1{margin:0 0 12px;font-size:clamp(30px,5vw,46px);line-height:1.12;letter-spacing:-.7px}
     .hero p{margin:0;color:var(--muted);max-width:72ch}
     .tags{display:flex;gap:10px;flex-wrap:wrap;margin-top:18px}
     .tag{
       font-size:12px;padding:7px 10px;border-radius:999px;
-      border:1px solid var(--line);background:var(--soft);color:var(--muted)
+      border:1px solid var(--line);background:rgba(246,247,249,.88);color:var(--muted)
     }
     .cta{display:flex;gap:10px;flex-wrap:wrap;margin-top:18px}
     .btn{
       display:inline-flex;align-items:center;justify-content:center;
       padding:10px 13px;border-radius:999px;border:1px solid var(--line);
-      color:var(--text);font-size:13px;background:#fff;font-weight:600
+      color:var(--text);font-size:13px;background:rgba(255,255,255,.94);font-weight:600
     }
     .btn:hover{background:var(--soft);text-decoration:none}
     .btn.primary{border-color:var(--accent);background:var(--accent);color:#fff}
     .btn.primary:hover{background:#e95d00}
     .grid{display:grid;grid-template-columns:repeat(12,1fr);gap:14px;margin-top:14px}
     .card{grid-column:span 4;padding:var(--pad)}
+    .card.with-image{display:flex;flex-direction:column}
     .card.wide{grid-column:span 12}
     .card h2{margin:0 0 10px;font-size:17px}
     .card p{margin:0;color:var(--muted)}
     .card ul{margin:12px 0 0;padding-left:18px;color:var(--muted)}
+    .card.with-image ul{margin-bottom:16px}
     .card li{margin:6px 0}
+    .card-image{
+      display:block;width:100%;height:138px;object-fit:cover;
+      margin-top:auto;border-radius:10px;border:1px solid var(--line);
+    }
+    .card-image.process{object-position:center 60%}
+    .card-image.automation{object-position:center 47%}
     .small{font-size:13px}
     .split{display:grid;grid-template-columns:1.2fr .8fr;gap:18px;align-items:start}
     .contactline{
@@ -111,12 +122,14 @@
       .header-actions{justify-content:flex-start}
       nav{justify-content:flex-start}
       .brand-logo{width:150px}
+      .card-image{height:170px}
     }
     @media(max-width:560px){
       .brand{align-items:flex-start;flex-direction:column;gap:8px}
       .header-actions{align-items:flex-start;flex-direction:column;gap:4px}
       .hero{padding:22px}
       .card{padding:20px}
+      .card-image{height:150px}
     }
   </style>
 </head>
@@ -160,7 +173,7 @@
     </section>
 
     <section class="grid" id="work" aria-label="What we do">
-      <div class="card">
+      <div class="card with-image">
         <h2>Bioprocess &amp; process engineering</h2>
         <p>
           Practical engineering around fermentation, process equipment and utilities,
@@ -171,9 +184,10 @@
           <li>Temperature, pH, DO and feed control</li>
           <li>CIP/SIP, process heating and equipment specification</li>
         </ul>
+        <img class="card-image process" src="../assets/bioprocess-detail.jpg" alt="Process vessel with internal heat exchanger" loading="lazy" />
       </div>
 
-      <div class="card">
+      <div class="card with-image">
         <h2>Industrial automation &amp; instrumentation</h2>
         <p>
           Control and measurement solutions for process installations, including upgrades
@@ -184,6 +198,7 @@
           <li>pH, DO, temperature, pressure and other instrumentation</li>
           <li>Modbus, gateways and process logging</li>
         </ul>
+        <img class="card-image automation" src="../assets/automation-panel.jpg" alt="Control panel with WAGO I/O and industrial components" loading="lazy" />
       </div>
 
       <div class="card">
