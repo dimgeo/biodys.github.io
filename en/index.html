@@ -1,0 +1,254 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Biodys BV — Bioprocess engineering • Industrial automation • Technical software</title>
+  <meta name="description" content="Biodys BV is a small engineering company in Groningen, the Netherlands, working on bioprocess engineering, industrial automation, instrumentation and technical software." />
+  <link rel="alternate" hreflang="nl" href="/" />
+  <link rel="alternate" hreflang="en" href="/en/" />
+  <style>
+    :root{
+      --bg:#ffffff;
+      --card:#ffffff;
+      --soft:#f6f7f9;
+      --soft-accent:#fff5ed;
+      --text:#171717;
+      --muted:#626875;
+      --line:#e7e9ed;
+      --accent:#ff6500;
+      --accent-dark:#c94f00;
+      --shadow:0 10px 30px rgba(17,24,39,.06);
+      --radius:16px;
+      --max:980px;
+      --pad:22px;
+      --sans:ui-sans-serif,system-ui,-apple-system,Segoe UI,Roboto,Helvetica,Arial,sans-serif;
+    }
+    *{box-sizing:border-box}
+    html{scroll-behavior:smooth}
+    body{
+      margin:0;
+      font-family:var(--sans);
+      background:
+        radial-gradient(1000px 420px at 100% -10%,rgba(255,101,0,.08),transparent 60%),
+        linear-gradient(180deg,#fff 0%,#fcfcfd 100%);
+      color:var(--text);
+      line-height:1.6;
+    }
+    a{color:var(--accent-dark);text-decoration:none}
+    a:hover{text-decoration:underline}
+    .wrap{max-width:var(--max);margin:0 auto;padding:28px 18px 60px}
+    header{
+      display:flex;align-items:center;justify-content:space-between;gap:18px;
+      padding:10px 0 22px;
+      position:sticky;top:0;z-index:10;
+      background:rgba(255,255,255,.92);
+      backdrop-filter:blur(10px);
+    }
+    .brand{display:flex;align-items:center;gap:16px;min-width:0}
+    .brand-logo{width:170px;height:auto;display:block;flex:0 0 auto}
+    .brand-copy{min-width:0}
+    .brand strong{display:block;font-size:15px}
+    .brand span{display:block;font-size:12px;color:var(--muted)}
+    .header-actions{display:flex;align-items:center;gap:12px;flex-wrap:wrap;justify-content:flex-end}
+    nav{display:flex;gap:10px;flex-wrap:wrap;justify-content:flex-end}
+    nav a{font-size:13px;color:var(--muted);padding:7px 10px;border-radius:999px}
+    nav a:hover{color:var(--text);background:var(--soft);text-decoration:none}
+    .langswitch{font-size:12px;color:var(--muted);white-space:nowrap}
+    .langswitch a{color:var(--muted);padding:4px 3px}
+    .langswitch a:hover{color:var(--accent-dark);text-decoration:none}
+    .langswitch .active{color:var(--accent-dark);font-weight:700;padding:4px 3px}
+    .hero,
+    .card{
+      border:1px solid var(--line);
+      background:var(--card);
+      box-shadow:var(--shadow);
+      border-radius:var(--radius);
+    }
+    .hero{
+      padding:30px;
+      margin-top:8px;
+      border-top:4px solid var(--accent);
+    }
+    .hero h1{margin:0 0 12px;font-size:clamp(30px,5vw,46px);line-height:1.12;letter-spacing:-.7px}
+    .hero p{margin:0;color:var(--muted);max-width:72ch}
+    .tags{display:flex;gap:10px;flex-wrap:wrap;margin-top:18px}
+    .tag{
+      font-size:12px;padding:7px 10px;border-radius:999px;
+      border:1px solid var(--line);background:var(--soft);color:var(--muted)
+    }
+    .cta{display:flex;gap:10px;flex-wrap:wrap;margin-top:18px}
+    .btn{
+      display:inline-flex;align-items:center;justify-content:center;
+      padding:10px 13px;border-radius:999px;border:1px solid var(--line);
+      color:var(--text);font-size:13px;background:#fff;font-weight:600
+    }
+    .btn:hover{background:var(--soft);text-decoration:none}
+    .btn.primary{border-color:var(--accent);background:var(--accent);color:#fff}
+    .btn.primary:hover{background:#e95d00}
+    .grid{display:grid;grid-template-columns:repeat(12,1fr);gap:14px;margin-top:14px}
+    .card{grid-column:span 4;padding:var(--pad)}
+    .card.wide{grid-column:span 12}
+    .card h2{margin:0 0 10px;font-size:17px}
+    .card p{margin:0;color:var(--muted)}
+    .card ul{margin:12px 0 0;padding-left:18px;color:var(--muted)}
+    .card li{margin:6px 0}
+    .small{font-size:13px}
+    .split{display:grid;grid-template-columns:1.2fr .8fr;gap:18px;align-items:start}
+    .contactline{
+      margin-top:14px;color:var(--muted);padding:14px 16px;
+      border-radius:12px;background:var(--soft-accent);border:1px solid #fed7aa
+    }
+    footer{
+      margin-top:24px;padding-top:16px;border-top:1px solid var(--line);
+      display:flex;justify-content:space-between;gap:12px;flex-wrap:wrap;
+      color:var(--muted);font-size:12px
+    }
+    @media(max-width:860px){
+      .card{grid-column:span 12}
+      .split{grid-template-columns:1fr}
+      header{align-items:flex-start;flex-direction:column;position:static;background:transparent;backdrop-filter:none}
+      .header-actions{justify-content:flex-start}
+      nav{justify-content:flex-start}
+      .brand-logo{width:150px}
+    }
+    @media(max-width:560px){
+      .brand{align-items:flex-start;flex-direction:column;gap:8px}
+      .header-actions{align-items:flex-start;flex-direction:column;gap:4px}
+      .hero{padding:22px}
+      .card{padding:20px}
+    }
+  </style>
+</head>
+<body>
+  <div class="wrap">
+    <header>
+      <div class="brand" aria-label="Biodys BV">
+        <img class="brand-logo" src="../logo.png" alt="Biodys" />
+        <div class="brand-copy">
+          <strong>Biodys BV</strong>
+          <span>Groningen, The Netherlands</span>
+        </div>
+      </div>
+      <div class="header-actions">
+        <nav aria-label="Navigation">
+          <a href="#work">What we do</a>
+          <a href="#projects">Typical projects</a>
+          <a href="#contact">Contact</a>
+        </nav>
+        <div class="langswitch" aria-label="Language selection">[<a href="../" lang="nl">NL</a> | <span class="active" aria-current="page">EN</span>]</div>
+      </div>
+    </header>
+
+    <section class="hero">
+      <h1>Bioprocess engineering, industrial automation and technical software.</h1>
+      <p>
+        Biodys BV is a small engineering company working at the intersection of biotechnology,
+        process engineering, instrumentation and software. We support focused technical projects,
+        from analysis and equipment selection to prototyping, implementation and troubleshooting.
+      </p>
+      <div class="tags" aria-label="Areas of expertise">
+        <span class="tag">Fermentation &amp; bioprocessing</span>
+        <span class="tag">Instrumentation &amp; PLC control</span>
+        <span class="tag">Process data &amp; logging</span>
+        <span class="tag">Embedded and edge integration</span>
+      </div>
+      <div class="cta">
+        <a class="btn primary" href="mailto:inq@biodys.com?subject=Inquiry%20for%20Biodys%20BV">Contact Biodys</a>
+        <a class="btn" href="#work">View expertise</a>
+      </div>
+    </section>
+
+    <section class="grid" id="work" aria-label="What we do">
+      <div class="card">
+        <h2>Bioprocess &amp; process engineering</h2>
+        <p>
+          Practical engineering around fermentation, process equipment and utilities,
+          with attention to measurability, reproducibility and maintainability.
+        </p>
+        <ul class="small">
+          <li>Fermenters and pilot-scale equipment</li>
+          <li>Temperature, pH, DO and feed control</li>
+          <li>CIP/SIP, process heating and equipment specification</li>
+        </ul>
+      </div>
+
+      <div class="card">
+        <h2>Industrial automation &amp; instrumentation</h2>
+        <p>
+          Control and measurement solutions for process installations, including upgrades
+          to existing systems where replacement of the complete installation is unnecessary.
+        </p>
+        <ul class="small">
+          <li>PLC programming and I/O integration</li>
+          <li>pH, DO, temperature, pressure and other instrumentation</li>
+          <li>Modbus, gateways and process logging</li>
+        </ul>
+      </div>
+
+      <div class="card">
+        <h2>Technical software &amp; integration</h2>
+        <p>
+          Small, maintainable software tools and interfaces for industrial environments,
+          especially where machines, process data and business systems need to connect.
+        </p>
+        <ul class="small">
+          <li>Batch logging and reporting</li>
+          <li>Embedded and Linux-based gateways</li>
+          <li>ERP and machine-data integration</li>
+        </ul>
+      </div>
+
+      <div class="card wide" id="projects">
+        <div class="split">
+          <div>
+            <h2>Typical projects</h2>
+            <p>
+              Assignments are usually compact and technically focused. Examples include:
+            </p>
+            <ul class="small">
+              <li>Fermenter instrumentation and control, including pH, DO and temperature</li>
+              <li>Steam, SIP and process-heating questions</li>
+              <li>PLC batch logging, data export and technical reporting</li>
+              <li>Industrial gateways between machines and ERP systems</li>
+              <li>Selection and specification of pumps, valves, sensors and heat exchangers</li>
+            </ul>
+          </div>
+          <div>
+            <h2>How Biodys works</h2>
+            <p>
+              Direct contact, short lines and a pragmatic approach. Depending on the assignment,
+              work may consist of analysis, design, prototyping, supplier evaluation,
+              implementation support or troubleshooting.
+            </p>
+          </div>
+        </div>
+      </div>
+
+      <div class="card wide" id="contact">
+        <h2>Contact</h2>
+        <p>
+          Have a technical question, a small engineering project or a system that needs to be
+          understood, improved or connected? Feel free to get in touch.
+        </p>
+        <p class="contactline">
+          <strong>Biodys BV</strong><br />
+          Groningen, The Netherlands<br />
+          E-mail: <a href="mailto:inq@biodys.com">inq@biodys.com</a>
+        </p>
+        <div class="cta">
+          <a class="btn primary" href="mailto:inq@biodys.com?subject=Inquiry%20for%20Biodys%20BV">Send an inquiry</a>
+        </div>
+      </div>
+    </section>
+
+    <footer>
+      <div>© <span id="year"></span> Biodys BV</div>
+      <div>Bioprocess engineering • Industrial automation • Technical software</div>
+    </footer>
+  </div>
+  <script>
+    document.getElementById("year").textContent = new Date().getFullYear();
+  </script>
+</body>
+</html>
