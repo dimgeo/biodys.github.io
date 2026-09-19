@@ -69,7 +69,21 @@
       padding:30px;
       margin-top:8px;
       border-top:4px solid var(--accent);
+      position:relative;
+      overflow:hidden;
+      isolation:isolate;
     }
+    .hero::before{
+      content:"";
+      position:absolute;
+      inset:0;
+      background:url("assets/IMG_20250923_141106166.jpg") center 48%/cover no-repeat;
+      opacity:.08;
+      filter:saturate(.75) contrast(.92) brightness(1.04);
+      pointer-events:none;
+      z-index:0;
+    }
+    .hero > *{position:relative;z-index:1}
     .hero h1{margin:0 0 12px;font-size:clamp(30px,5vw,46px);line-height:1.12;letter-spacing:-.7px}
     .hero p{margin:0;color:var(--muted);max-width:72ch}
     .tags{display:flex;gap:10px;flex-wrap:wrap;margin-top:18px}
@@ -88,11 +102,24 @@
     .btn.primary:hover{background:#e95d00}
     .grid{display:grid;grid-template-columns:repeat(12,1fr);gap:14px;margin-top:14px}
     .card{grid-column:span 4;padding:var(--pad)}
+    .card.visual{display:flex;flex-direction:column}
     .card.wide{grid-column:span 12}
     .card h2{margin:0 0 10px;font-size:17px}
     .card p{margin:0;color:var(--muted)}
     .card ul{margin:12px 0 0;padding-left:18px;color:var(--muted)}
+    .card.visual ul{margin-bottom:16px}
     .card li{margin:6px 0}
+    .card-image{
+      display:block;
+      width:100%;
+      height:118px;
+      object-fit:cover;
+      margin-top:auto;
+      border-radius:10px;
+      border:1px solid var(--line);
+    }
+    .card-image.process{object-position:center 43%}
+    .card-image.automation{object-position:center 48%}
     .small{font-size:13px}
     .split{display:grid;grid-template-columns:1.2fr .8fr;gap:18px;align-items:start}
     .contactline{
@@ -111,12 +138,14 @@
       .header-actions{justify-content:flex-start}
       nav{justify-content:flex-start}
       .brand-logo{width:150px}
+      .card-image{height:150px}
     }
     @media(max-width:560px){
       .brand{align-items:flex-start;flex-direction:column;gap:8px}
       .header-actions{align-items:flex-start;flex-direction:column;gap:4px}
       .hero{padding:22px}
       .card{padding:20px}
+      .card-image{height:140px}
     }
   </style>
 </head>
@@ -160,7 +189,7 @@
     </section>
 
     <section class="grid" id="work" aria-label="Wat we doen">
-      <div class="card">
+      <div class="card visual">
         <h2>Bioproces- &amp; procestechniek</h2>
         <p>
           Praktische engineering rond fermentatie, procesapparatuur en utilities,
@@ -171,9 +200,10 @@
           <li>Temperatuur-, pH-, DO- en voedingsregeling</li>
           <li>CIP/SIP, procesverwarming en apparatuurspecificatie</li>
         </ul>
+        <img class="card-image process" src="assets/Screenshot_20260919-121356.png" alt="Procesvat met interne warmtewisselaar" loading="lazy" />
       </div>
 
-      <div class="card">
+      <div class="card visual">
         <h2>Industriële automatisering &amp; instrumentatie</h2>
         <p>
           Besturings- en meetoplossingen voor procesinstallaties, waaronder upgrades van bestaande systemen
@@ -184,6 +214,7 @@
           <li>pH, DO, temperatuur, druk en andere instrumentatie</li>
           <li>Modbus, gateways en proceslogging</li>
         </ul>
+        <img class="card-image automation" src="assets/IMG_20240718_125634977.jpg" alt="Industrieel besturingspaneel met WAGO I/O" loading="lazy" />
       </div>
 
       <div class="card">
