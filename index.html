@@ -1,10 +1,12 @@
 <!doctype html>
-<html lang="en">
+<html lang="nl">
 <head>
   <meta charset="utf-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1" />
-  <title>Biodys BV — Bioprocess engineering • Industrial automation • Technical software</title>
-  <meta name="description" content="Biodys BV is a small engineering company in Groningen, the Netherlands, working on bioprocess engineering, industrial automation, instrumentation and technical software." />
+  <title>Biodys BV — Bioprocesengineering • Industriële automatisering • Technische software</title>
+  <meta name="description" content="Biodys BV is een klein ingenieursbureau in Groningen dat werkt aan bioprocesengineering, industriële automatisering, instrumentatie en technische software." />
+  <link rel="alternate" hreflang="nl" href="/" />
+  <link rel="alternate" hreflang="en" href="/en/" />
   <style>
     :root{
       --bg:#ffffff;
@@ -48,9 +50,14 @@
     .brand-copy{min-width:0}
     .brand strong{display:block;font-size:15px}
     .brand span{display:block;font-size:12px;color:var(--muted)}
+    .header-actions{display:flex;align-items:center;gap:12px;flex-wrap:wrap;justify-content:flex-end}
     nav{display:flex;gap:10px;flex-wrap:wrap;justify-content:flex-end}
     nav a{font-size:13px;color:var(--muted);padding:7px 10px;border-radius:999px}
     nav a:hover{color:var(--text);background:var(--soft);text-decoration:none}
+    .langswitch{font-size:12px;color:var(--muted);white-space:nowrap}
+    .langswitch a{color:var(--muted);padding:4px 3px}
+    .langswitch a:hover{color:var(--accent-dark);text-decoration:none}
+    .langswitch .active{color:var(--accent-dark);font-weight:700;padding:4px 3px}
     .hero,
     .card{
       border:1px solid var(--line);
@@ -101,11 +108,13 @@
       .card{grid-column:span 12}
       .split{grid-template-columns:1fr}
       header{align-items:flex-start;flex-direction:column;position:static;background:transparent;backdrop-filter:none}
+      .header-actions{justify-content:flex-start}
       nav{justify-content:flex-start}
       .brand-logo{width:150px}
     }
     @media(max-width:560px){
       .brand{align-items:flex-start;flex-direction:column;gap:8px}
+      .header-actions{align-items:flex-start;flex-direction:column;gap:4px}
       .hero{padding:22px}
       .card{padding:20px}
     }
@@ -118,96 +127,99 @@
         <img class="brand-logo" src="logo.png" alt="Biodys" />
         <div class="brand-copy">
           <strong>Biodys BV</strong>
-          <span>Groningen, The Netherlands</span>
+          <span>Groningen, Nederland</span>
         </div>
       </div>
-      <nav aria-label="Navigation">
-        <a href="#work">What we do</a>
-        <a href="#projects">Typical projects</a>
-        <a href="#contact">Contact</a>
-      </nav>
+      <div class="header-actions">
+        <nav aria-label="Navigatie">
+          <a href="#work">Wat we doen</a>
+          <a href="#projects">Typische projecten</a>
+          <a href="#contact">Contact</a>
+        </nav>
+        <div class="langswitch" aria-label="Taalkeuze">[<span class="active" aria-current="page">NL</span> | <a href="en/" lang="en">EN</a>]</div>
+      </div>
     </header>
 
     <section class="hero">
-      <h1>Bioprocess engineering, industrial automation and technical software.</h1>
+      <h1>Bioprocesengineering, industriële automatisering en technische software.</h1>
       <p>
-        Biodys BV is a small engineering company working at the intersection of biotechnology,
-        process engineering, instrumentation and software. We support focused technical projects,
-        from analysis and equipment selection to prototyping, implementation and troubleshooting.
+        Biodys BV is een klein ingenieursbureau op het snijvlak van biotechnologie,
+        procestechniek, instrumentatie en software. We ondersteunen afgebakende technische projecten,
+        van analyse en apparatuurselectie tot prototyping, implementatie en troubleshooting.
       </p>
-      <div class="tags" aria-label="Areas of expertise">
-        <span class="tag">Fermentation &amp; bioprocessing</span>
-        <span class="tag">Instrumentation &amp; PLC control</span>
-        <span class="tag">Process data &amp; logging</span>
-        <span class="tag">Embedded and edge integration</span>
+      <div class="tags" aria-label="Expertisegebieden">
+        <span class="tag">Fermentatie &amp; bioprocessen</span>
+        <span class="tag">Instrumentatie &amp; PLC-besturing</span>
+        <span class="tag">Procesdata &amp; logging</span>
+        <span class="tag">Embedded- en edge-integratie</span>
       </div>
       <div class="cta">
-        <a class="btn primary" href="mailto:inq@biodys.com?subject=Inquiry%20for%20Biodys%20BV">Contact Biodys</a>
-        <a class="btn" href="#work">View expertise</a>
+        <a class="btn primary" href="mailto:inq@biodys.com?subject=Vraag%20aan%20Biodys%20BV">Neem contact op</a>
+        <a class="btn" href="#work">Bekijk expertise</a>
       </div>
     </section>
 
-    <section class="grid" id="work" aria-label="What we do">
+    <section class="grid" id="work" aria-label="Wat we doen">
       <div class="card">
-        <h2>Bioprocess &amp; process engineering</h2>
+        <h2>Bioproces- &amp; procestechniek</h2>
         <p>
-          Practical engineering around fermentation, process equipment and utilities,
-          with attention to measurability, reproducibility and maintainability.
+          Praktische engineering rond fermentatie, procesapparatuur en utilities,
+          met aandacht voor meetbaarheid, reproduceerbaarheid en onderhoudbaarheid.
         </p>
         <ul class="small">
-          <li>Fermenters and pilot-scale equipment</li>
-          <li>Temperature, pH, DO and feed control</li>
-          <li>CIP/SIP, process heating and equipment specification</li>
+          <li>Fermentoren en pilot-scale apparatuur</li>
+          <li>Temperatuur-, pH-, DO- en voedingsregeling</li>
+          <li>CIP/SIP, procesverwarming en apparatuurspecificatie</li>
         </ul>
       </div>
 
       <div class="card">
-        <h2>Industrial automation &amp; instrumentation</h2>
+        <h2>Industriële automatisering &amp; instrumentatie</h2>
         <p>
-          Control and measurement solutions for process installations, including upgrades
-          to existing systems where replacement of the complete installation is unnecessary.
+          Besturings- en meetoplossingen voor procesinstallaties, waaronder upgrades van bestaande systemen
+          wanneer vervanging van de complete installatie niet nodig is.
         </p>
         <ul class="small">
-          <li>PLC programming and I/O integration</li>
-          <li>pH, DO, temperature, pressure and other instrumentation</li>
-          <li>Modbus, gateways and process logging</li>
+          <li>PLC-programmering en I/O-integratie</li>
+          <li>pH, DO, temperatuur, druk en andere instrumentatie</li>
+          <li>Modbus, gateways en proceslogging</li>
         </ul>
       </div>
 
       <div class="card">
-        <h2>Technical software &amp; integration</h2>
+        <h2>Technische software &amp; integratie</h2>
         <p>
-          Small, maintainable software tools and interfaces for industrial environments,
-          especially where machines, process data and business systems need to connect.
+          Kleine, onderhoudbare softwaretools en interfaces voor industriële omgevingen,
+          vooral waar machines, procesdata en bedrijfssystemen met elkaar moeten worden verbonden.
         </p>
         <ul class="small">
-          <li>Batch logging and reporting</li>
-          <li>Embedded and Linux-based gateways</li>
-          <li>ERP and machine-data integration</li>
+          <li>Batchlogging en rapportage</li>
+          <li>Embedded en Linux-gebaseerde gateways</li>
+          <li>ERP- en machinedata-integratie</li>
         </ul>
       </div>
 
       <div class="card wide" id="projects">
         <div class="split">
           <div>
-            <h2>Typical projects</h2>
+            <h2>Typische projecten</h2>
             <p>
-              Assignments are usually compact and technically focused. Examples include:
+              Opdrachten zijn doorgaans duidelijk afgebakend en technisch gericht. Voorbeelden zijn:
             </p>
             <ul class="small">
-              <li>Fermenter instrumentation and control, including pH, DO and temperature</li>
-              <li>Steam, SIP and process-heating questions</li>
-              <li>PLC batch logging, data export and technical reporting</li>
-              <li>Industrial gateways between machines and ERP systems</li>
-              <li>Selection and specification of pumps, valves, sensors and heat exchangers</li>
+              <li>Instrumentatie en regeling van fermentoren, waaronder pH, DO en temperatuur</li>
+              <li>Vraagstukken rond stoom, SIP en procesverwarming</li>
+              <li>PLC-batchlogging, data-export en technische rapportage</li>
+              <li>Industriële gateways tussen machines en ERP-systemen</li>
+              <li>Selectie en specificatie van pompen, kleppen, sensoren en warmtewisselaars</li>
             </ul>
           </div>
           <div>
-            <h2>How Biodys works</h2>
+            <h2>Werkwijze</h2>
             <p>
-              Direct contact, short lines and a pragmatic approach. Depending on the assignment,
-              work may consist of analysis, design, prototyping, supplier evaluation,
-              implementation support or troubleshooting.
+              Direct contact, korte lijnen en een pragmatische aanpak. Afhankelijk van de opdracht
+              kan het werk bestaan uit analyse, ontwerp, prototyping, leveranciersbeoordeling,
+              ondersteuning bij implementatie of troubleshooting.
             </p>
           </div>
         </div>
@@ -216,23 +228,23 @@
       <div class="card wide" id="contact">
         <h2>Contact</h2>
         <p>
-          Have a technical question, a small engineering project or a system that needs to be
-          understood, improved or connected? Feel free to get in touch.
+          Heb je een technische vraag, een technisch project of een systeem dat beter moet worden
+          begrepen, verbeterd of gekoppeld? Neem gerust contact op.
         </p>
         <p class="contactline">
           <strong>Biodys BV</strong><br />
-          Groningen, The Netherlands<br />
+          Groningen, Nederland<br />
           E-mail: <a href="mailto:inq@biodys.com">inq@biodys.com</a>
         </p>
         <div class="cta">
-          <a class="btn primary" href="mailto:inq@biodys.com?subject=Inquiry%20for%20Biodys%20BV">Send an inquiry</a>
+          <a class="btn primary" href="mailto:inq@biodys.com?subject=Vraag%20aan%20Biodys%20BV">Stuur een bericht</a>
         </div>
       </div>
     </section>
 
     <footer>
       <div>© <span id="year"></span> Biodys BV</div>
-      <div>Bioprocess engineering • Industrial automation • Technical software</div>
+      <div>Bioprocesengineering • Industriële automatisering • Technische software</div>
     </footer>
   </div>
   <script>
